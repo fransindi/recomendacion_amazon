@@ -8,4 +8,3 @@ Estructura de carpetas:
 - funciones: aqui se encuentran las funciones de uso comun para las distintas etapas, podemos dividirlas en funciones de preprocesamiento, analisis e incluso de Machine Learning
 - notebooks: aqui se realizaran los EDA de cada set de datos elegido
 - resultados: es donde devolveremos los datos ya tratados para su posterior uso, como los modelos entrenados de machine learning.
-- venv_sistema_amazon: Entorno virtual donde se descargan las dependencias para que no hayan conflicto de versiones.
