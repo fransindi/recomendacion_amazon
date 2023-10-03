@@ -12,6 +12,9 @@ spark = SparkSession.builder \
 from pyspark.sql.functions import col, sum, when, size, length, to_date, from_unixtime, year, count
 
 
+from pyspark.sql.types import StructType, StructField, StringType, FloatType, IntegerType, BooleanType
+
+
    
 
 def etl_reviews(archivo):
@@ -20,11 +23,27 @@ def etl_reviews(archivo):
     sencillo de etl, con transformaciones de columnas,
     eliminacion de duplicados y tratamiento de valores nulos.
     parametros: 
-    validador: solo en caso de ser True, se hace el proceso.
+    Archivo: un archivo tipo json
     """
-   
-    df = spark.read.json(archivo)
-   
+    try:
+        df = spark.read.json(archivo)
+    except:
+        custom_schema = StructType([
+        StructField("asin", StringType(), nullable=True),
+        StructField("image", StringType(), nullable=True),
+        StructField("overall", FloatType(), nullable=True),
+        StructField("reviewText", StringType(), nullable=True),
+        StructField("reviewTime", StringType(), nullable=True),
+        StructField("reviewerID", StringType(), nullable=True),
+        StructField("reviewerName", StringType(), nullable=True),
+        StructField("style", StringType(), nullable=True),
+        StructField("summary", StringType(), nullable=True),
+        StructField("unixReviewTime", IntegerType(), nullable=True),
+        StructField("verified", BooleanType(), nullable=True),
+        StructField("vote", StringType(), nullable=True)
+        ])
+        df = spark.read.json(archivo, schema=custom_schema)
+
     # Eliminamos los duplicados donde esten todas las filas
     df = df.dropDuplicates()
 
