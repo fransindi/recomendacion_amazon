@@ -23,7 +23,7 @@ def etl_reviews(archivo):
     sencillo de etl, con transformaciones de columnas,
     eliminacion de duplicados y tratamiento de valores nulos.
     parametros: 
-    Archivo: un archivo tipo json
+    Archivo: un archivo tipo json que provenga de la fuente de Amazon.
     """
     try:
         df = spark.read.json(archivo)

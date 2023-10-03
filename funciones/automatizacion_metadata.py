@@ -20,7 +20,7 @@ def etl_metadata(archivo):
     sencillo de etl, con transformaciones de columnas,
     eliminacion de duplicados y tratamiento de valores nulos.
     parametros: 
-    validador: solo en caso de ser True, se hace el proceso.
+    archivo: un archivo tipo json que provenga de la fuente de Amazon.
     """
     df = spark.read.json(archivo)
     df = df.dropDuplicates()
