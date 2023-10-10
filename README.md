@@ -56,7 +56,7 @@ Dada su prominencia como uno de los gigantes del comercio electrónico a nivel g
 ### 9. Tecnologías Utilizadas <a name="stack"></a>
 - GitHub, Git
 - Google Docs, Sheets, Slides
-- Python, Scikit-Learn, Pandas, PySpark, Numpy, SpaCy
+- Python, Scikit-Learn, Pandas, PySpark, Numpy, SpaCy, Matplotlib
 - Visual Studio Code
 - AWS s3, Glue, Glue Data Catalog, Redshift, SageMaker, QuickSight, Cloudwatch
 

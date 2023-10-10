@@ -1,7 +1,3 @@
-import pandas as pd #utilizaremos pandas para el mejor manejo de tablas
-import numpy as np #utilizaremos numpy para un mejor tratamiento de los datos
-import matplotlib.pyplot as plt
-import seaborn as sns # matplotlib y seaborn seran usados para graficar
 from pyspark.sql import SparkSession #pyspark lo usaremos como opcion al gran requerimiento de procesamiento de datos
 
 # Crea una sesión de Spark
@@ -25,7 +21,7 @@ def etl_metadata(archivo):
     df = spark.read.json(archivo)
     df = df.dropDuplicates()
     # Lista de nombres de columnas que deseas eliminar
-    columnas_a_eliminar = ["imageURL", "imageUrlHighRes", "tech1", 'tech2', 'category', 'date', 'feature', 'fit', 'similar_item']
+    columnas_a_eliminar = ["imageURL", "imageUrlHighRes", "tech1", 'tech2', 'category', 'date', 'feature', 'fit', 'similar_item', 'details']
 
     # Elimina las columnas especificadas
     df = df.drop(*columnas_a_eliminar)
@@ -33,7 +29,6 @@ def etl_metadata(archivo):
 
     # eliminamos los valores nulos
     df = df.na.drop(subset=['title'])
-    df = df.na.drop(subset=['details'])
 
     #Convertimos las columnas a su tipo de dato y trasnformamos
     df = df.withColumn('main_cat', lit('Digital Music'))

@@ -1,7 +1,5 @@
-import numpy as np #importamos numpy para un mejor manejo de matrizes, filas y valores
-import matplotlib.pyplot as plt #esta libreria la usaremos para graficar
 from pyspark.sql import SparkSession #PySpark sera nuestra opcion para el manejo de grandes volumenes de datos
-import os
+
 
 # Crea una sesión de Spark
 spark = SparkSession.builder \
@@ -61,3 +59,4 @@ def etl_reviews(archivo):
     df = df.withColumn("review_year", year(df["review_date"]))
     df = df.drop("unixreviewtime")
     return df
+
