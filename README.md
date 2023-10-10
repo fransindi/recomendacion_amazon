@@ -51,7 +51,7 @@ Dada su prominencia como uno de los gigantes del comercio electrónico a nivel g
 ![Trabajo en la Nube](src/imagenes/flujo_en_la_nube.png)
 
 ### 8. Arquitectura Data Warehouse<a name="der"></a>
-![DER](src/imagenes/arquitectura_der_data_warehouse.jpg)
+![DER](src/imagenes/DER_DWH.png)
 
 ### 9. Tecnologías Utilizadas <a name="stack"></a>
 - GitHub, Git
