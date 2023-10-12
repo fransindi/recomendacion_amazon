@@ -16,7 +16,7 @@ async def all_beauty_recomendacion(palabra_clave: str):
     # Buscar la recomendación basada en la palabra clave
     result = all_beauty[all_beauty['PalabraClave'] == palabra_clave]['Recomendaciones'].values
     if len(result) > 0:
-        recomendaciones = json.loads(result[0])
+        recomendaciones = result[0]
         return {"recomendacion": recomendaciones}
     else:
         return {"recomendacion": "Palabra clave no encontrada"}
@@ -27,7 +27,7 @@ async def digital_music_recomendacion(palabra_clave: str):
     # Buscar la recomendación basada en la palabra clave
     result = digital_music[digital_music['PalabraClave'] == palabra_clave]['Recomendaciones'].values
     if len(result) > 0:
-        recomendaciones = json.loads(result[0])
+        recomendaciones = result[0]
         return {"recomendacion": recomendaciones}
     else:
         return {"recomendacion": "Palabra clave no encontrada"}
@@ -37,7 +37,7 @@ async def pet_supplies_recomendacion(palabra_clave: str):
     # Buscar la recomendación basada en la palabra clave
     result = pet_supplies[pet_supplies['PalabraClave'] == palabra_clave]['Recomendaciones'].values
     if len(result) > 0:
-        recomendaciones = json.loads(result[0])
+        recomendaciones = result[0]
         return {"recomendacion": recomendaciones}
     else:
         return {"recomendacion": "Palabra clave no encontrada"}
@@ -47,7 +47,7 @@ async def toys_recomendacion(palabra_clave: str):
     # Buscar la recomendación basada en la palabra clave
     result = toys[toys['PalabraClave'] == palabra_clave]['Recomendaciones'].values
     if len(result) > 0:
-        recomendaciones = json.loads(result[0])
+        recomendaciones = result[0]
         return {"recomendacion": recomendaciones}
     else:
         return {"recomendacion": "Palabra clave no encontrada"}
