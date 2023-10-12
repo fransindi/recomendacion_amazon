@@ -5,10 +5,10 @@ import json
 #instanciamos la api
 app = FastAPI()
 
-all_beauty = pd.read_csv('../resultados/dataset_ml/recomendaciones_all_beauty.csv')
-digital_music = pd.read_csv('../resultados/dataset_ml/recomendaciones_digital_music.csv')
-pet_supplies = pd.read_csv('../resultados/dataset_ml/recomendaciones_pet_supplies.csv')
-toys = pd.read_csv('../resultados/dataset_ml/recomendaciones_toys_and_games.csv')
+all_beauty = pd.read_csv('resultados/dataset_ml/recomendaciones_all_beauty.csv')
+digital_music = pd.read_csv('resultados/dataset_ml/recomendaciones_digital_music.csv')
+pet_supplies = pd.read_csv('resultados/dataset_ml/recomendaciones_pet_supplies.csv')
+toys = pd.read_csv('resultados/dataset_ml/recomendaciones_toys_and_games.csv')
 
 @app.get("/recomendacion_all_beauty/")
 async def all_beauty_recomendacion(palabra_clave: str):
