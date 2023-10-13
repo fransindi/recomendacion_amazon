@@ -10,14 +10,14 @@ digital_music = pd.read_csv('resultados/dataset_ml/recomendaciones_digital_music
 pet_supplies = pd.read_csv('resultados/dataset_ml/recomendaciones_pet_supplies.csv')
 toys = pd.read_csv('resultados/dataset_ml/recomendaciones_toys_and_games.csv')
 
-def buscar_recomendacion(palabra_clave):
+def buscar_recomendacion(palabra_clave, dataframe):
     """
     Esta funcion itera sobre un dataframe y busca las recomendaciones
     segun la palabra clave ingresada
     ------
     parametros: palabra_clave. una palabra en minuscula del tipo str.
     """
-    result = all_beauty[all_beauty['PalabraClave'] == palabra_clave]['Recomendaciones'].values
+    result = dataframe[dataframe['PalabraClave'] == palabra_clave]['Recomendaciones'].values
     if len(result) > 0:
         return result[0]
     else:
@@ -39,7 +39,7 @@ async def all_beauty_recomendacion(palabra_clave: str):
     if not palabra_clave:
         raise HTTPException(status_code=400, detail="Palabra clave no proporcionada")
 
-    recomendacion = buscar_recomendacion(palabra_clave)
+    recomendacion = buscar_recomendacion(palabra_clave, all_beauty)
 
     if recomendacion is not None:
         return {"recomendacion": recomendacion}
@@ -63,7 +63,7 @@ async def digital_music_recomendacion(palabra_clave: str):
     if not palabra_clave:
         raise HTTPException(status_code=400, detail="Palabra clave no proporcionada")
 
-    recomendacion = buscar_recomendacion(palabra_clave)
+    recomendacion = buscar_recomendacion(palabra_clave, digital_music)
 
     if recomendacion is not None:
         return {"recomendacion": recomendacion}
@@ -86,12 +86,14 @@ async def pet_supplies_recomendacion(palabra_clave: str):
     if not palabra_clave:
         raise HTTPException(status_code=400, detail="Palabra clave no proporcionada")
 
-    recomendacion = buscar_recomendacion(palabra_clave)
+    recomendacion = buscar_recomendacion(palabra_clave, pet_supplies)
 
     if recomendacion is not None:
         return {"recomendacion": recomendacion}
     else:
         raise HTTPException(status_code=404, detail="Palabra clave no encontrada")
+
+
 
 @app.get("/recomendacion_toys/")
 async def toys_recomendacion(palabra_clave: str):
@@ -109,7 +111,7 @@ async def toys_recomendacion(palabra_clave: str):
     if not palabra_clave:
         raise HTTPException(status_code=400, detail="Palabra clave no proporcionada")
 
-    recomendacion = buscar_recomendacion(palabra_clave)
+    recomendacion = buscar_recomendacion(palabra_clave, toys)
 
     if recomendacion is not None:
         return {"recomendacion": recomendacion}
