@@ -1,0 +1,42 @@
+[
+  {
+    "Name": "asin",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "title",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "main_cat",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "brand",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "rank",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "price",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "also_view",
+    "Type": "array",
+    "Comment": ""
+  },
+  {
+    "Name": "also_buy",
+    "Type": "array",
+    "Comment": ""
+  }
+]

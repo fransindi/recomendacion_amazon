@@ -1,0 +1,30 @@
+[
+  {
+    "Name": "overall",
+    "Type": "double"
+  },
+  {
+    "Name": "verified",
+    "Type": "boolean"
+  },
+  {
+    "Name": "reviewerid",
+    "Type": "string"
+  },
+  {
+    "Name": "asin",
+    "Type": "string"
+  },
+  {
+    "Name": "reviewername",
+    "Type": "string"
+  },
+  {
+    "Name": "reviewtext",
+    "Type": "string"
+  },
+  {
+    "Name": "unixreviewtime",
+    "Type": "int"
+  }
+]
